@@ -1,0 +1,6 @@
+folderlist.txt
+recover_dichromatic_parameters.html
+recover_dichromatic_parameters_eq27473.png
+recover_global_illuminant.html
+recover_materials.html
+recover_multi_illuminant.html
