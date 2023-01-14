@@ -42,7 +42,7 @@ function D = get_pca_(I, n)
     if isfield(I, 'HDR')
         has_header = 1;
     end
-    %   copy origin data
+    %   copy origin data - OD (Original Data)
     if has_struct
         OD = I.I;
     else
@@ -54,7 +54,7 @@ function D = get_pca_(I, n)
         clear OD;
         error('this function is designed to process hyperspectral image cube');
     end
-    %   reshape to 2D format
+    %   reshape to 2D format - entry number by bands
     OD     = reshape(OD, [height*width, bands]);
     OD_M   = mean(OD);      %   get its mean
     od_max = max(OD(:));       %   get the max value of OD
