@@ -38,10 +38,10 @@
 %       Load an hyperspectral I and downsize to a 100by120by30 image:
 %           I = FLAread('..\shared\samples\apples_small.fla', 100, 120);
 %
-%       Crop a region from given hyperspectral I file (XSTART, YSTART) and (XSTOP, YSTOP) specify
+%       Crop a region from given hyperspectral I file (XSTART, YSTART) and (WIDTH, HEIGHT) specify
 %           I = FLAread('..\shared\samples\apples_small.fla', 1, 30, 1, 50); which gives 50 by 30 by 30 image
 %           I = FLAread('..\shared\samples\apples_small.fla', [1, 1, 100, 200]); which crops original image with
-%           starting point [1, 1] and dimension 200 by 100
+%           starting point [x, y] = [1, 1] and dimension [width, height] = 100 by 200
 %
 %       Extract 20th band from given hyperspectral file
 %           I = FLAread('..\shared\samples\apples_small.fla', 'band', 20);
@@ -69,7 +69,7 @@ function Image = FLAread(filename, xstart, xstop, ystart, ystop)
         case 1
             [I, H] = import_fla_(filename);
         otherwise
-            error('error in input parameters');
+            error('No enough input parameters');
     end
     
     

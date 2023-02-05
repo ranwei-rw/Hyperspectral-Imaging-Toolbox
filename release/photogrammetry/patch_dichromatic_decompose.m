@@ -44,7 +44,7 @@ function [G, ...
 
     if nargin == 3
         debug = 0;
-    elseif nargin > 4 || argin < 3
+    elseif nargin > 4 || nargin < 3
         error('Incorrect input argument number');
     end
     
