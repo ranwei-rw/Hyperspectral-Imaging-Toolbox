@@ -49,7 +49,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function export_fla_(filename, DATA, Overwrite)
-
+    if isa(filename, 'string')
+        filename = char(filename);
+    end    
     overwrite_option_is_given = false;
 
     if exist('Overwrite', 'var')
@@ -60,7 +62,6 @@ function export_fla_(filename, DATA, Overwrite)
     %   check whether it exists a . in given file name
     app = regexp(filename, '\.', 'start');
     leng = length(filename);
-
     suffix = '';
     if ~isempty(app)
         if app(1) == leng
@@ -86,6 +87,7 @@ function export_fla_(filename, DATA, Overwrite)
                 end
             end
         else
+
             suffix = filename(app(1) : leng);
             filename = filename(1 : app(1)-1);
 
